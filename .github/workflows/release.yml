@@ -38,5 +38,7 @@ jobs:
       # Needed by cli/gh-extension-precompile to support cross compiling
       - run: sudo apt-get update && sudo apt-get install -y g++-x86-64-linux-gnu libc6-dev-amd64-cross
       - uses: cli/gh-extension-precompile@v1
+        env:
+          CGO_ENABLED: 1
         with:
           go_version: ${{ env.GO_VERSION }}
